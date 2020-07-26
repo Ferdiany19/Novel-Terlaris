@@ -1,5 +1,7 @@
 package com.ferdian.novelterlaris
 
+import java.util.*
+
 data class Book(
     var pengarang: String = "",
     var judul: String = "",

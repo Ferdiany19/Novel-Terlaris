@@ -14,15 +14,17 @@ import com.bumptech.glide.RequestBuilder
 import com.bumptech.glide.request.RequestOptions
 import com.ferdian.novelterlaris.Book
 
-class ListView(private val listBook: ArrayList<Book>) : RecyclerView.Adapter<ListView.ListViewHolder>() {
+class ListView(var listBook: ArrayList<Book>) : RecyclerView.Adapter<ListView.ListViewHolder>() {
+
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var tvPengarang: TextView = itemView.findViewById(R.id.tv_pengarang)
+        var tvJudul: TextView = itemView.findViewById(R.id.tv_judul)
         var tvTahunRilis: TextView = itemView.findViewById(R.id.tv_tahun_rilis)
         var tvImage: ImageView = itemView.findViewById(R.id.tv_image)
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ListViewHolder {
-        val view: View = LayoutInflater.from(viewGroup.context).inflate(R.layout.card_books, viewGroup, false)
+        val view = LayoutInflater.from(viewGroup.context).inflate(R.layout.card_books, viewGroup, false)
         return ListViewHolder(view)
     }
 
@@ -39,7 +41,9 @@ class ListView(private val listBook: ArrayList<Book>) : RecyclerView.Adapter<Lis
             .into(holder.tvImage)
 
         holder.tvPengarang.text = book.pengarang
+        holder.tvJudul.text = book.judul
         holder.tvTahunRilis.text = book.tahunRilis
+
     }
 
 }

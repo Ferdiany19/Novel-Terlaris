@@ -9,25 +9,53 @@ import android.view.MenuItem
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ferdian.novelterlaris.adapter.ListView
+import kotlinx.android.synthetic.main.activity_about.*
 
 class MainActivity : AppCompatActivity() {
     private lateinit var rvBooks: RecyclerView
     private var list: ArrayList<Book> = arrayListOf()
 
-    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
-        super.onCreate(savedInstanceState, persistentState)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         rvBooks = findViewById(R.id.rv_books)
         rvBooks.setHasFixedSize(true)
 
         list.addAll(DataBook.listData)
-        showRecylerList()
+        showRecyclerList()
     }
 
-    private fun showRecylerList() {
+    private fun showRecyclerList() {
         rvBooks.layoutManager = LinearLayoutManager(this)
-        val listView = ListView(list)
-        rvBooks.adapter = listView
+        val listViewAdapter = ListView(list)
+        rvBooks.adapter = listViewAdapter
     }
+
+    private fun showAbout() {
+        val moveToAbout = Intent(this, AboutActivity::class.java)
+        startActivity(moveToAbout)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        setMode(item.itemId)
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun setMode(selectedMode: Int) {
+        when(selectedMode) {
+            R.id.menu_home -> {
+                showRecyclerList()
+            }
+            R.id.menu_about -> {
+                showAbout()
+            }
+        }
+    }
+
 }
