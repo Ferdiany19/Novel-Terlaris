@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.PersistableBundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ferdian.novelterlaris.adapter.ListView
@@ -49,11 +50,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun setMode(selectedMode: Int) {
         when(selectedMode) {
-            R.id.menu_home -> {
-                showRecyclerList()
-            }
             R.id.menu_about -> {
-                showAbout()
+                val toAbout = Intent(this@MainActivity, AboutActivity::class.java)
+                startActivity(toAbout)
             }
         }
     }

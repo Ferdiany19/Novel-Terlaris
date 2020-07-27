@@ -7,4 +7,12 @@
     <string name="judul">Judul</string>
     <string name="home">Home</string>
     <string name="about">About</string>
+    <string name="judul_buku">Judul Buku</string>
+    <string name="pengarang_njudul">Pengarang\nJudul</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="content_description">content_description</string>
+    <string name="namaSaya">Ferdian Yuliansyah</string>
+    <string name="emailSaya">ferdianyuliansyah19@gmail.com</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
 </resources>

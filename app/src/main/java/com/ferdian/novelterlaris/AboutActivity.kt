@@ -12,7 +12,9 @@ class AboutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
-        setTitle(title)
+        val actionBar = supportActionBar
+        actionBar!!.title = title
+        actionBar.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -21,21 +23,11 @@ class AboutActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        setMode(item.itemId)
         return super.onOptionsItemSelected(item)
     }
 
-    private fun moveHome() {
-        val moveIntent = Intent(this, MainActivity::class.java)
-        startActivity(moveIntent)
-    }
-
-    private fun setMode(selectedMode: Int) {
-        when(selectedMode) {
-            R.id.menu_home -> {
-                moveHome()
-            }
-
-        }
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
