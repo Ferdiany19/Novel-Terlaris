@@ -51,7 +51,7 @@ class MainActivity : AppCompatActivity() {
     private fun setMode(selectedMode: Int) {
         when(selectedMode) {
             R.id.menu_about -> {
-                val toAbout = Intent(this@MainActivity, AboutActivity::class.java)
+                val toAbout = Intent(this, AboutActivity::class.java)
                 startActivity(toAbout)
             }
         }

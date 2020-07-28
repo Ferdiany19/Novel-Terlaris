@@ -7,4 +7,11 @@
     <color name="transparent">#FFFFFF</color>
     <color name="gradient_start">#36d1dc</color>
     <color name="gradient_end">#5b86e5</color>
+
+    <color name="profilePrimaryDark">#FF3B30</color>
+    <color name="profileAccentColor">#F7F7F7</color>
+    <color name="whiteTextColor">#fff</color>
+    <color name="profileBackground">#fff</color>
+    <color name="blackTextColor">#000</color>
+    <color name="profileEditTextColor">#707070</color>
 </resources>

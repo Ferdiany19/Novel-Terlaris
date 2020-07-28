@@ -15,4 +15,6 @@
     <string name="emailSaya">ferdianyuliansyah19@gmail.com</string>
     <string name="name">Name</string>
     <string name="email">Email</string>
+    <string name="birth_day">Birth Day</string>
+    <string name="_31_juli_2001">31 Juli 2001</string>
 </resources>
